@@ -12,11 +12,47 @@ datasource db {
 
 
 model User {
-  id        String @id @default(uuid())
-  username String @unique
-  name      String
-
-  created_ate DateTime @default(now())
+  id            String @id @default(uuid())
+  username      String @unique
+  name          String
+  email         String?   @unique
+  emailVerified DateTime?
+  avatart_url   String?
+  created_ate   DateTime @default(now())
+  accounts      Account[]
+  sessions      Session[]
 
   @@map("users")
+}
+
+//integracao de um usuario com algum provider 
+model Account {
+  id                   String  @id @default(cuid())
+  user_id               String
+  type                 String
+  provider             String
+  provider_account_id  String
+  refresh_token        String?   
+  access_token         String?  
+  expires_at           Int?
+  token_type           String?
+  scope                String?
+  id_token             String?  
+  session_state        String?
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@unique([provider, provider_account_id])
+  @@map("accounts")
+}
+
+// quer dizer que cada usuario fizer o login em uma maquinda diferente vai ter uma sessao.
+model Session {
+  id            String   @id @default(cuid())
+  sessionToken  String   @unique
+  user_id       String
+  expires       DateTime
+  user          User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
 }
