@@ -5,7 +5,7 @@
 
 */
 -- AlterTable
-ALTER TABLE "users" ADD COLUMN "avatart_url" TEXT;
+ALTER TABLE "users" ADD COLUMN "avatar_url" TEXT;
 ALTER TABLE "users" ADD COLUMN "email" TEXT;
 ALTER TABLE "users" ADD COLUMN "emailVerified" DATETIME;
 
