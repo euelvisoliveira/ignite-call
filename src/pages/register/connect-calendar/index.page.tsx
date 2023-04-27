@@ -5,7 +5,7 @@ import { AuthError, ConnectBox, ConnectItem } from './styles';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
-export default function Register() {
+export default function ConnectCalendar() {
 
   const session = useSession() // através dessa session consigo obter o usuário que esta logado 
   const router = useRouter() 

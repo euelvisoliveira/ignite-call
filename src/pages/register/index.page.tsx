@@ -17,7 +17,7 @@ const registerFormSchema = z.object({
   
   name: z
   .string()
-  .min(3, { message: 'O nomeprecisa ter pelo menos 3 letras.'})
+  .min(3, { message: 'O nome precisa ter pelo menos 3 letras.'})
 });
 
 type RegisterFormData = z.infer<typeof registerFormSchema>

@@ -12,7 +12,7 @@ export function PrismaAdapter(req: NextApiRequest, res: NextApiResponse): Adapte
 				throw new Error("User ID not found on cookies.");
 			}
 
-			const prismaUSer = await prisma.user.update({
+			const prismaUser = await prisma.user.update({
 				where: {
 					id: userIdOnCookies
 				},
@@ -28,12 +28,12 @@ export function PrismaAdapter(req: NextApiRequest, res: NextApiResponse): Adapte
 			})
 
 			return {
-				id: prismaUSer.id,
-				name: prismaUSer.name,
-				username: prismaUSer.username,
-				email: prismaUSer.email!,
+				id: prismaUser.id,
+				name: prismaUser.name,
+				username: prismaUser.username,
+				email: prismaUser.email!,
 				emailVerified: null,
-				avatar_url: prismaUSer.avatar_url!
+				avatar_url: prismaUser.avatar_url!
 			};
 		},
 
@@ -55,7 +55,6 @@ export function PrismaAdapter(req: NextApiRequest, res: NextApiResponse): Adapte
 				email: user.email!,
 				emailVerified: null,
 				avatar_url: user.avatar_url!,
-
       }
     },
 
