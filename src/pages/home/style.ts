@@ -10,26 +10,26 @@ export const Container = styled('div', {
 })
 
 export const Hero = styled('div', {
-	maxWidth: 480,
-	padding: '0 $10',
+  maxWidth: 480,
+  padding: '0 $10',
 
-	[`> ${Heading}`]: {
-		'@media(max-width: 600px)': {
-			fontSize: '$6xl',
-		},
-	},
+  [`> ${Heading}`]: {
+    '@media(max-width: 600px)': {
+      fontSize: '$6xl',
+    },
+  },
 
-	[`> ${Text}`]: {
-		marginTop: '$2',
-		color: '$gray200'
-	}
-});
+  [`> ${Text}`]: {
+    marginTop: '$2',
+    color: '$gray200',
+  },
+})
 
 export const Preview = styled('div', {
   paddingRight: '$8',
   overflow: 'hidden',
 
   '@media(max-width: 600px)': {
-    display: 'none'
-  }
+    display: 'none',
+  },
 })
