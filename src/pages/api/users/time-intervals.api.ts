@@ -55,7 +55,7 @@ export default async function getServerSideProps(
     }),
   )
 
-  // await prisma.userTimeInteval.createMany
+  // await prisma.userTimeInterval.createMany
 
   return res.status(201).end()
 }
