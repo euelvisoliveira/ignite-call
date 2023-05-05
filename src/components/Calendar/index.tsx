@@ -34,7 +34,7 @@ export function Calendar() {
         <thead>
           <tr>
             {shortWeekDays.map((weekDay) => (
-              <th key={weekDay}>{weekDay}</th>
+              <th key={weekDay}>{weekDay}.</th>
             ))}
           </tr>
         </thead>
