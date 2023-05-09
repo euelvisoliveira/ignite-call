@@ -35,12 +35,8 @@ export default async function getServerSideProps(
     return res.status(401).end
   }
 
-  console.log('req.body:', req.body)
-
   // o parse ele retorna todo tipado
   const { intervals } = timeIntervalsBodySchema.parse(req.body)
-
-  console.log('intervals:', intervals)
 
   await Promise.all(
     intervals.map((interval) => {
