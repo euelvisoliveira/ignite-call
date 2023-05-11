@@ -9,8 +9,6 @@ export default function ConnectCalendar() {
   const session = useSession() // através dessa session consigo obter o usuário que esta logado
   const router = useRouter()
 
-  console.log(session)
-
   const hasAuthError = !!router.query.error
   const isSignedIn = session.status === 'authenticated'
 
